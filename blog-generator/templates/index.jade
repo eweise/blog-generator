@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  each article in articles
+    - var content = article.html.replace(/<[^>]+>/g, '')
+    article.content-article
+      header.content-header
+        small.header-metadata
+          span.timestamp= moment(article.date).format('MMMM D, YYYY')
+        h2.content-title
+          a(href=article.url)= article.title
+      section.content!= content.substr(0, 250 + content.substr(250).search(/\W/)) + ' ...'
+  nav.navigation.cf
+    if prevPage
+      a.btn.navigation-next(href=prevPage.url)
+        | Newer&nbsp;&nbsp;
+        i.icon-right-dir
+    if nextPage
+      a.btn.navigation-prev(href=nextPage.url)
+        i.icon-left-dir
+        | &nbsp;&nbsp;Older

@@ -1,0 +1,23 @@
+{
+  "name": "blakeembrey.com",
+  "version": "0.2.0",
+  "description": "Personal blog of Blake Embrey",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.6.0",
+    "underscore": "^1.6.0",
+    "wintersmith": "~2.0.9",
+    "write-good": "^0.5.0"
+  },
+  "scripts": {
+    "test": "write-good contents/articles/**/*.md",
+    "preview": "wintersmith preview",
+    "deploy": "rm -rf ./build; wintersmith build; cd ./build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:blakeembrey/blakeembrey.com.git\" master:gh-pages --force && rm -rf .git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakeembrey/blakeembrey.com.git"
+  },
+  "author": "Blake Embrey",
+  "license": "MIT"
+}

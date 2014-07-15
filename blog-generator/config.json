@@ -1,0 +1,26 @@
+{
+  "locals": {
+    "url": "http://ericeweise.com",
+    "name": "Eric Weise",
+    "owner": "Eric “Weise",
+    "twitter": "eweise",
+    "description": "All things programming"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee"
+  ],
+  "require": {
+    "_": "underscore",
+    "moment": "moment"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 5
+  }
+}
