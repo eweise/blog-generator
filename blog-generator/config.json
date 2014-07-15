@@ -1,6 +1,7 @@
 {
+  "baseUrl":"/eweise",
   "locals": {
-    "url": "http://ericeweise.com",
+    "url": "http://eweise.github.io/eweise",
     "name": "Eric Weise",
     "owner": "Eric “Weise",
     "twitter": "eweise",

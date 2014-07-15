@@ -444,4 +444,13 @@ table tr:hover td {
   #disqus_thread {
     display: none;
   }
+
+    h1 #brand {
+        font-size: 2em;
+        margin: 0.67em 0;
+        text-align: center;
+    }
+
 }
+
+
