@@ -51,14 +51,14 @@ mediator ? Send("/user/backend-service", PerformWork, false)
 As with all actors we need to implement a 'receive' method. Our receive method will provide http routing information to Spray so it knows how to handle requests. Spray provides a DSL for doing this. In our example we implement just one route "dowork" in order to see our cluster in action
 
 ```scala
-     def receive = runRoute {
-       path("dowork") {
-         onComplete(mediator ? Send("/user/microservice", PerformWork, false)) {
-           case Success(value) => complete("OK")
-           case Failure(e) => complete(e.getMessage)
-         }
-       }
-
+def receive = runRoute {
+    path("dowork") {
+      onComplete(mediator ? Send("/user/backend-service", PerformWork, false)) {
+        case Success(value) => complete("OK")
+        case Failure(e) => complete(e.getMessage)
+      }
+    }
+  }
 ```
 
 ##Configuration
